@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Cakes from './components/Cakes';
 import Shop from './components/Shop';
 import BirthdaySurprise from './components/BirthdaySurprise';
-import Reviews from './components/Reviews';
+import ReviewHome from './components/ReviewHome';
 import NotFound from './components/NotFound';
 import BakingClasses from './components/BakingClasses';
 
@@ -26,7 +26,7 @@ function App() {
             <BirthdaySurprise />
           </Route>
           <Route path="/reviews">
-            <Reviews />
+            <ReviewHome />
           </Route>
           <Route path="/classes">
             <BakingClasses />
