@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 function Navigation() {
     return (
         <div className="font-bold shadow-sm" >
-            <a href="#" className="mr-3 shadow-lg p-1">Home</a>
-            <a href="#" className="mr-3 shadow-lg p-1">Cakes</a>
-            <a href="#" className="mr-3 shadow-lg p-1">Buy Cake</a>
-            <a href="#" className="mr-3 shadow-lg p-1">Birthday Shoot</a>
-            <a href="#" className="mr-3 shadow-lg p-1">Customer Reviews</a>
+            <Link exact to="/" className="mr-3 shadow-lg p-1 hover:text-orange-600">Home</Link>
+            <Link to="/cakes" className="mr-3 shadow-lg p-1 hover:text-orange-600">Cakes</Link>
+            <Link to="/shop" className="mr-3 shadow-lg p-1 hover:text-orange-600">Shop</Link>
+            <Link to="/shoot" className="mr-3 shadow-lg p-1 hover:text-orange-600">Birthday Shoot</Link>
+            <Link to="/reviews" className="mr-3 shadow-lg p-1 hover:text-orange-600">Customer Reviews</Link>
         </div>
     )
 }
