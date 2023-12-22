@@ -8,6 +8,7 @@ import Shop from './components/Shop';
 import BirthdaySurprise from './components/BirthdaySurprise';
 import Reviews from './components/Reviews';
 import NotFound from './components/NotFound';
+import BakingClasses from './components/BakingClasses';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/reviews">
             <Reviews />
+          </Route>
+          <Route path="/classes">
+            <BakingClasses />
           </Route>
           <Route exact path="/">
             <Home />

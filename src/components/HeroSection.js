@@ -7,7 +7,7 @@ function HeroSection() {
             <div className="card p-6 max-w-screen-xl bg-white rounded-lg  w-full flex mt-20 items-center justify-between shadow-2xl">
 
                 <div className="flex-column  w-1/2 h-[400px] pr-20">
-                    <h1 className="font-bold text-5xl mb-5">Celebrate Every Moment with Sweetness</h1>
+                    <h1 className="font-bold text-5xl mb-5 shadow=lg">Celebrate Every Moment with Sweetness</h1>
                     <p className="text-lg mb-6">From classic flavors to innovative creations, discover a symphony of tastes that will tantalize your senses and leave you craving for more</p>
                     <button className="flex px-6 py-3 border bg-orange-500 text-white rounded-md items-center hover:text-black shadow-lg border-orange-500 border-2 hover:border-black"><strong>Order</strong><img src="/shopping-bag-svgrepo-com.svg" alt="cake" className="h-5 w-5 ml-2 shadow-lg " /></button>
                     <div className="flex mr-3 items-center mt-36">
@@ -25,7 +25,7 @@ function HeroSection() {
 
 
             </div>
-        </div>
+        </div >
     );
 }
 
