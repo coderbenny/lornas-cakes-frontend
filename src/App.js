@@ -9,6 +9,7 @@ import BirthdaySurprise from './components/BirthdaySurprise';
 import ReviewHome from './components/ReviewHome';
 import NotFound from './components/NotFound';
 import BakingClasses from './components/BakingClasses';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
+        {/* <Footer /> */}
       </div>
     </Router>
   );

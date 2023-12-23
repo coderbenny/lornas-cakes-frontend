@@ -9,8 +9,8 @@ function Reviews({ comments }) {
             <h1 className="font-bold text-3xl text-center text-white mb-4">Reviews</h1>
 
             <div className="flex p-3 flex-wrap overflow-y-auto ">
-                {data.comments.map((comment) => (
-                    <div className="flex bg-white p-3 w-92 max-h-[200px] rounded-lg shadow-lg mr-3 mb-3">
+                {data.comments.map((comment, index) => (
+                    <div key={index} className="flex bg-white p-3 w-92 max-h-[200px] rounded-lg shadow-lg mr-3 mb-3">
                         <img src="/lorna1.jpg" alt="user" className="h-20 w-20 mr-3" />
                         <div className="flex-column items-center">
                             <h1 className="font-bold mb-2">{comment.name}</h1>

@@ -9,6 +9,50 @@ const shopDetails = {
     }
 };
 
+const cakeType = [
+    {
+        id: 1,
+        image_url: "/cake.jpg",
+        image_alt: "cake",
+        type: "Vanilla cake",
+        description: "Whispers of pure vanilla magic, a symphony of sweetness in every heavenly bite.",
+    },
+    {
+        id: 2,
+        image_url: "/cake.jpg",
+        image_alt: "cake",
+        type: "Chocolate cake",
+        description: "Silky cocoa dream: layers of deep chocolate richness with a melt-in-mouth allure.",
+    },
+    {
+        id: 3,
+        image_url: "/cake.jpg",
+        image_alt: "cake",
+        type: "Black forest cake",
+        description: "Dark cherry allure: luscious layers of chocolate and fruit, a woodland delight.",
+    },
+    {
+        id: 4,
+        image_url: "/cake.jpg",
+        image_alt: "cake",
+        type: "Chocolate cake",
+        description: "Silky cocoa dream: layers of deep chocolate richness with a melt-in-mouth allure.",
+    },
+    {
+        id: 5,
+        image_url: "/cake.jpg",
+        image_alt: "cake",
+        type: "Lemon cake",
+        description: "Zesty lemon delight: a citrus symphony atop a velvety cake. A slice of sunshine!",
+    },
+    {
+        id: 6,
+        image_url: "/cake.jpg",
+        image_alt: "cake",
+        type: "Cream cake",
+    },
+];
+
 const comments = [
     {
         name: "Jane Doe",
@@ -64,4 +108,4 @@ const comments = [
     },
 ];
 
-export default { shopDetails, comments }
+export default { shopDetails, cakeType, comments };
