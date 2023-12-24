@@ -21,52 +21,61 @@ function CakeDetail() {
                         <img src={cake.image_url} alt={cake.image_alt} className="h-full w-full" />
                     </div>
                     <h1 className="font-bold text-3xl">{cake.type}</h1>
-                    <p className="mb-2 text-lg">{cake.price}</p>
+                    <p className="mb-2 text-lg"><strong>Price:</strong> {cake.price}</p>
                     <p className="mb-2 bg-gray-500 rounded-md text-white p-2">{cake.description}</p>
-                    <NavLink className="bg-black text-white w-full text-center p-1 rounded-md font-bold" to={`/buy/${id}`}>Buy</NavLink>
+                    <div className="flex">
+                        <h1 className="mr-3 font-bold">Quantity</h1>
+                        <input type="number" className="text-black text-center mb-2 border border-1 rounded-md w-[50px] border-black" />
+                    </div>
+                    <NavLink className="bg-black text-white w-full text-center p-1 rounded-md font-bold" to={`/buy/${id}`}>Add To Cart</NavLink>
                     <NavLink className="text-center bg-red-500 text-white w-full text-center p-1 font-bold rounded-md mt-2" to="/cakes">Cancel</NavLink>
                 </div>
 
                 <div className="bg-white mr-10 mt-5 rounded-md w-[400px]">
                     <h1 className="text-center mt-2 mb-2 font-bold text-2xl">Shopping Cart</h1>
-                    <div className="mx-auto w-[380px] p-3 h-[350px] overflow-y-auto rounded-md">
+                    <div className="mx-auto w-[380px] p-3 h-[380px] overflow-y-auto rounded-md">
 
                         {/* Cart Item */}
-                        <div className="flex p-2 bg-gray-300 rounded-md mb-3 shadow-lg items-center">
+                        <div className="flex p-2 bg-gray-300 rounded-md mb-3 shadow-lg items-center border-2 hover:border-orange-500">
                             <img src={cake.image_url} alt={cake.image_alt} className="rounded-md mr-2 h-[70px] w-[70px]" />
-                            <div className="max-h-full">
+                            <div className="max-h-full w-full">
                                 <h1 className="font-bold text-lg">{cake.type}</h1>
                                 <p className=""><strong>Price:</strong> {cake.price}</p>
                                 <p className=""><strong>Quantity: x1</strong>{ }</p>
                             </div>
+                            <button className="text-white font-bold ruonded-md bg-orange-500 p-2 ">X</button>
                         </div>
 
-                        <div className="flex p-2 bg-gray-300 rounded-md mb-3 shadow-lg items-center">
+                        <div className="flex p-2 bg-gray-300 rounded-md mb-3 shadow-lg items-center border-2 hover:border-orange-500">
                             <img src={cake.image_url} alt={cake.image_alt} className="rounded-md mr-2 h-[70px] w-[70px]" />
-                            <div className="max-h-full">
+                            <div className="max-h-full w-full">
                                 <h1 className="font-bold text-lg">{cake.type}</h1>
                                 <p className=""><strong>Price:</strong> {cake.price}</p>
                                 <p className=""><strong>Quantity: x1</strong>{ }</p>
                             </div>
+                            <button className="text-white font-bold ruonded-md bg-orange-500 p-2 ">X</button>
                         </div>
 
-                        <div className="flex p-2 bg-gray-300 rounded-md mb-3 shadow-lg items-center">
+                        <div className="flex p-2 bg-gray-300 rounded-md mb-3 shadow-lg items-center border-2 hover:border-orange-500">
                             <img src={cake.image_url} alt={cake.image_alt} className="rounded-md mr-2 h-[70px] w-[70px]" />
-                            <div className="max-h-full">
+                            <div className="max-h-full w-full">
                                 <h1 className="font-bold text-lg">{cake.type}</h1>
                                 <p className=""><strong>Price:</strong> {cake.price}</p>
                                 <p className=""><strong>Quantity: x1</strong>{ }</p>
                             </div>
+                            <button className="text-white font-bold ruonded-md bg-orange-500 p-2 ">X</button>
                         </div>
 
-                        <div className="flex p-2 bg-gray-300 rounded-md mb-3 shadow-lg items-center">
+                        <div className="flex p-2 bg-gray-300 rounded-md mb-3 shadow-lg items-center border-2 hover:border-orange-500">
                             <img src={cake.image_url} alt={cake.image_alt} className="rounded-md mr-2 h-[70px] w-[70px]" />
-                            <div className="max-h-full">
+                            <div className="max-h-full w-full">
                                 <h1 className="font-bold text-lg">{cake.type}</h1>
                                 <p className=""><strong>Price:</strong> {cake.price}</p>
                                 <p className=""><strong>Quantity: x1</strong>{ }</p>
                             </div>
+                            <button className="text-white font-bold ruonded-md bg-orange-500 p-2 ">X</button>
                         </div>
+
 
                     </div>
                     <div className="flex mt-1 ml-2 items-center mx-auto mr-2 bg-black p-2">
