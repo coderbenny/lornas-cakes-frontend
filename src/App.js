@@ -9,7 +9,7 @@ import BirthdaySurprise from './components/BirthdaySurprise';
 import ReviewHome from './components/ReviewHome';
 import NotFound from './components/NotFound';
 import BakingClasses from './components/BakingClasses';
-import Footer from './components/Footer';
+import CakeDetail from './components/CakeDetail';
 
 function App() {
   return (
@@ -17,6 +17,9 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
+          <Route path="/cakes/:id">
+            <CakeDetail />
+          </Route>
           <Route path="/cakes">
             <Cakes />
           </Route>
@@ -39,7 +42,6 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
-        {/* <Footer /> */}
       </div>
     </Router>
   );

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 
 function Navigation() {
     return (
-        <div className="font-bold shadow-sm" >
+        <div className="text-md text-center mb-1 md:font-bold shadow-sm" >
             <NavLink exact to="/" className="mr-3 shadow-lg p-1 hover:text-orange-600">Home</NavLink>
             <NavLink to="/cakes" className="mr-3 shadow-lg p-1 hover:text-orange-600">Cakes</NavLink>
             <NavLink to="/shop" className="mr-3 shadow-lg p-1 hover:text-orange-600">Shop</NavLink>

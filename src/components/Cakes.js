@@ -1,22 +1,28 @@
 import React from "react";
 import data from "../data/data";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function Cakes({ cakeType }) {
 
-    // console.log(cakeType)
+    const history = useHistory();
+
+    function handleBuyClick(cakeId) {
+        history.push(`/cakes/${cakeId}`);
+    }
+
     return (
-        <div className="body bg-orange-500 h-[700px] items-center justify-center">
-            <h1 className="font-bold text-3xl text-center text-white">Cakes</h1>
+        <div className="body bg-orange-500 h-[700px] flex flex-col items-center justify-center">
+            <h1 className="font-bold text-3xl text-center text-white mb-4">Cakes</h1>
 
-            <div className="flex flex-wrap max-h-screen w-[600px]">
+            <div className="grid grid-cols-4 gap-4 p-5 max-h-[580px] overflow-y-auto">
                 {data.cakeType.map((cake) => (
-
-                    <div key={cake.id} className="cake-card flex-column w-full">
-                        <div className="mr-3">
-                            <img src={cake.image_url} alt={cake.image_alt} className="h-40 w-40" />
+                    <div key={cake.id} className="flex flex-col rounded-md items-center bg-white p-3 w-[300px]">
+                        <div className="mb-3">
+                            <img src={cake.image_url} alt={cake.image_alt} className="h-40 w-full" />
                         </div>
-                        <h1 className="font-bold text-white">{cake.type}</h1>
-                        <p className="text-white">{cake.type}</p>
+                        <h1 className="font-bold ">{cake.type}</h1>
+                        <p className="mb-2">{cake.price}</p>
+                        <button onClick={() => handleBuyClick(cake.id)} className="bg-black text-white w-full text-center p-1 rounded-md font-bold" to="/cakes/:id">Buy</button>
                     </div>
                 ))}
             </div>
