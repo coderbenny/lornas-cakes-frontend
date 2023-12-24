@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom/cjs/rea
 import Header from './components/Header';
 import Home from './components/Home';
 import Cakes from './components/Cakes';
-import Shop from './components/Shop';
 import BirthdaySurprise from './components/BirthdaySurprise';
 import ReviewHome from './components/ReviewHome';
 import NotFound from './components/NotFound';
@@ -22,9 +21,6 @@ function App() {
           </Route>
           <Route path="/cakes">
             <Cakes />
-          </Route>
-          <Route path="/shop">
-            <Shop />
           </Route>
           <Route path="/shoot">
             <BirthdaySurprise />

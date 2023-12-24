@@ -28,9 +28,11 @@ function CakeDetail() {
                         <input type="number" className="text-black text-center mb-2 border border-1 rounded-md w-[50px] border-black" />
                     </div>
                     <NavLink className="bg-black text-white w-full text-center p-1 rounded-md font-bold" to={`/buy/${id}`}>Add To Cart</NavLink>
-                    <NavLink className="text-center bg-red-500 text-white w-full text-center p-1 font-bold rounded-md mt-2" to="/cakes">Cancel</NavLink>
+                    <NavLink className="text-center bg-red-500 text-white w-full p-1 font-bold rounded-md mt-2" to="/cakes">Cancel</NavLink>
                 </div>
 
+
+                {/* Shopping Cart  */}
                 <div className="bg-white mr-10 mt-5 rounded-md w-[400px]">
                     <h1 className="text-center mt-2 mb-2 font-bold text-2xl">Shopping Cart</h1>
                     <div className="mx-auto w-[380px] p-3 h-[380px] overflow-y-auto rounded-md">
@@ -78,6 +80,7 @@ function CakeDetail() {
 
 
                     </div>
+
                     <div className="flex mt-1 ml-2 items-center mx-auto mr-2 bg-black p-2">
                         <h1 className="font-bold text-red-400 text-3xl mr-3">TOTAL:</h1>
                         <p className="font-bold text-white text-2xl">$100.00</p>
