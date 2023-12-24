@@ -21,8 +21,8 @@ function Cakes({ cakeType }) {
                             <img src={cake.image_url} alt={cake.image_alt} className="h-40 w-full" />
                         </div>
                         <h1 className="font-bold ">{cake.type}</h1>
-                        <p className="mb-2">{cake.price}</p>
-                        <button onClick={() => handleBuyClick(cake.id)} className="bg-black text-white w-full text-center p-1 rounded-md font-bold" to="/cakes/:id">Buy</button>
+                        <p className="mb-2">{cake.price} <i>per Kg</i></p>
+                        <button onClick={() => handleBuyClick(cake.id)} className="bg-black text-white w-full text-center p-1 rounded-md font-bold" to="/cakes/:id">Place Order</button>
                     </div>
                 ))}
             </div>

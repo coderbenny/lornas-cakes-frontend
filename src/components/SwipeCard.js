@@ -9,6 +9,13 @@ Swiper.use([Navigation, Pagination]);
 function SwipeCard() {
 
     const swiper = new Swiper('.swiper', {
+
+         // Autoplay delay in seconds
+         autoplay:{
+            delay: 5000,
+        },
+
+        
         // Optional parameters
         direction: 'vertical',
         loop: true,
@@ -18,11 +25,7 @@ function SwipeCard() {
           el: '.swiper-pagination',
         },
       
-        // Autoplay delay in seconds
-        autoplay:{
-            delay: 5000,
-        },
-
+       
         // Navigation arrows
         navigation: {
           nextEl: '.swiper-button-next',
@@ -50,8 +53,8 @@ function SwipeCard() {
             <div className="swiper-wrapper">
                 {/* Slides */}
                 <div className="swiper-slide h-full bg-white">My name is Benny</div>
-                <div className="swiper-slide h-full bg-white">I am 10 years</div>
-                <div className="swiper-slide h-full bg-white">A Jnr Software Engineer</div>
+                <div className="swiper-slide h-full bg-gray-500">I am 10 years</div>
+                <div className="swiper-slide h-full bg-orange-900">A Jnr Software Engineer</div>
                 {/* ... Render slides dynamically if needed */}
             </div>
             {/* If we need pagination */}

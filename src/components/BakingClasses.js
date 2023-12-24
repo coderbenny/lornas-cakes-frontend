@@ -1,9 +1,29 @@
 import React from "react";
+import data from "../data/data";
 
-function BakingClasses() {
+function BakingClasses({ bakingClasses }) {
     return (
         <div className=" items-center align-center bg-orange-500 h-[700px]">
-            <h1 className="font-bold text-3xl text-center text-white">Baking Classes</h1>
+            <h1 className="font-bold text-3xl text-center rounded:md text-white mb-2">Baking Classes</h1>
+
+            <div className="flex">
+                <img src="./poster-baking.jpg" alt="poster" className="h-[600px] ml-7 mr-5 z-30" />
+
+                <div className="flex-column bg-white rounded:md w-[700px] mr-6 p-3">
+                    <h1 className="font-bold  text-lg mb-2 text-center">Choose your package by selecting one of the choices below:</h1>
+
+                    {data.bakingClasses.map((bakingclass) => (
+
+                        <div className="bg-blue-500 mb-4 rounded-md p-3 text-black">
+                            <h1 className="font-bold p-1">{bakingclass.title}</h1>
+                            <p className="">{bakingclass.description}</p>
+                        </div>
+
+                    ))}
+
+
+                </div>
+            </div>
         </div>
     )
 }

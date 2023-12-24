@@ -224,4 +224,31 @@ const comments = [
     },
 ];
 
-export default { shopDetails, cakeType, comments };
+const bakingClasses = [
+    {
+        id: 1,
+        title: "Cupcakes MasterClass",
+        price: "$50",
+        description: "This Masterclass takes you from Level 0 to Level 100 in making Cupcakes."
+    },
+    {
+        id: 2,
+        title: "Wedding Cake MasterClass",
+        price: "$50",
+        description: "This Masterclass takes you from Level 0 to Level 100 in making Wedding cakes."
+    },
+    {
+        id: 3,
+        title: "Birthday Cake MasterClass",
+        price: "$50",
+        description: "This Masterclass takes you from Level 0 to Level 100 in making Birthday Cakes."
+    },
+    {
+        id: 4,
+        title: "Bread MasterClass",
+        price: "$50",
+        description: "This Masterclass takes you from Level 0 to Level 100 in making Bread."
+    },
+];
+
+export default { shopDetails, cakeType, comments, bakingClasses };
