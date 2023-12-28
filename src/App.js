@@ -9,14 +9,13 @@ import ReviewHome from './components/ReviewHome';
 import NotFound from './components/NotFound';
 import BakingClasses from './components/BakingClasses';
 import CakeDetail from './components/CakeDetail';
-// import Cart from './components/Cart';
+import Cart from './components/Cart';
 
 function App() {
   return (
     <Router>
       <div className="App justify-start">
         <Header />
-        {/* <Cart /> */}
         <Switch>
           <Route path="/cakes/:id">
             <CakeDetail />
@@ -32,6 +31,9 @@ function App() {
           </Route>
           <Route path="/classes">
             <BakingClasses />
+          </Route>
+          <Route path="/cart">
+            <Cart />
           </Route>
           <Route exact path="/">
             <Home />
