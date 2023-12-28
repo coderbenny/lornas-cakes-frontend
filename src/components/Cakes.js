@@ -1,8 +1,11 @@
 import React from "react";
 import data from "../data/data";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+// import { useState } from "react";
 
 function Cakes({ cakeType }) {
+
+    // const [order, setOrder] = useState([]);
 
     const history = useHistory();
 

@@ -14,7 +14,7 @@ function HeroSection() {
                 <div className="flex-column  w-1/2 h-[400px] pr-20">
                     <h1 className="font-bold text-5xl mb-5 shadow=lg">Celebrate Every Moment with Sweetness</h1>
                     <p className="text-lg mb-6">From classic flavors to innovative creations, discover a symphony of tastes that will tantalize your senses and leave you craving for more</p>
-                    <NavLink to="/cakes" className="flex max-w-[120px] px-6 py-3 bg-orange-500 text-white rounded-md items-center hover:shadow-lg"><strong>Order</strong><img src="/shopping-bag-svgrepo-com.svg" alt="cake" className="h-5 w-5 ml-2 shadow-lg " /></NavLink>
+                    <NavLink to="/cakes" className="flex max-w-[170px] px-6 py-3 bg-orange-500 text-white rounded-md items-center hover:shadow-lg"><strong>Place Order</strong><img src="/shopping-bag-svgrepo-com.svg" alt="cake" className="h-5 w-5 ml-2 shadow-lg " /></NavLink>
 
 
                     <div className="flex mr-3 items-center mt-36">
