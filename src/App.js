@@ -16,24 +16,21 @@ import Cart from './components/Cart';
 
 function App() {
 
-  const [cart, setCart] = useState([
-    {
-      id: 1,
-      image_url: "/delicious-cake.jpg",
-      type: "Vanilla cake",
-      price: "$10.00",
-      description: "Whispers of pure vanilla magic, a symphony of sweetness in every heavenly bite.",
-      quantity: "1",
-    },
-    {
-      id: 2,
-      image_url: "/delicious-cake.jpg",
-      type: "chocolate cake",
-      price: "$30.00",
-      description: "Whispers of chocolate magic, a symphony of sweetness in every bite.",
-      quantity: "3",
-    }
-  ]);
+  useState(() => (
+    fetch('https')
+  ), [])
+
+  const [cart, setCart] = useState([]);
+
+  // Delete Item from Cart
+  function removeFromCart(newData) {
+    setCart(newData)
+  }
+
+  // Adding item to Cart
+  function handleAddCake(newData) {
+    setCart(newData)
+  }
 
   return (
     <Router>
@@ -41,7 +38,7 @@ function App() {
         <Header />
         <Switch>
           <Route path="/cakes/:id">
-            <CakeDetail />
+            <CakeDetail addOrder={handleAddCake} />
           </Route>
           <Route path="/cakes">
             <Cakes />
@@ -56,7 +53,7 @@ function App() {
             <BakingClasses />
           </Route>
           <Route path="/cart">
-            <Cart shoppingCart={cart} />
+            <Cart shoppingCart={cart} deleteItem={removeFromCart} />
           </Route>
           <Route exact path="/">
             <Home />

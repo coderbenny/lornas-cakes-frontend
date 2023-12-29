@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 import data from "../data/data";
 
-function CakeDetail() {
+function CakeDetail({ addOrder }) {
     const [showDialog, setShowDialog] = useState(false); // State to manage dialog visibility
     const history = useHistory();
     const { id } = useParams();
@@ -12,14 +12,18 @@ function CakeDetail() {
         return <div>Cake Not Found</div>;
     }
 
+    // console.log(cake)
+
     function handleBuy(e) {
         e.preventDefault();
-        const formData = e.target;
-        console.log(formData);
-    }
 
-    function goToCakes() {
+        const weight = e.target.querySelector('input[name=weight]').value;
+        const quantity = e.target.querySelector('.quantity').value;
+        const newCake = { ...cake, weight: weight, quantity: quantity };
+        addOrder(newCake)
         setShowDialog(true); // Show dialog when navigating
+
+        // console.log(newCake)
     }
 
     function continueShopping() {
@@ -38,22 +42,22 @@ function CakeDetail() {
                 <form onSubmit={handleBuy}>
                     <div key={cake.id} className="flex flex-col mr-10 rounded-md mt-5 items-center bg-white p-3 w-[400px]">
                         <div className="mb-3">
-                            <img src={cake.image_url} alt={cake.image_alt} className="h-full w-full" />
+                            <img src={cake.image_url} alt={cake.image_alt} className="image h-full w-full" />
                         </div>
-                        <h1 className="font-bold text-3xl">{cake.type}</h1>
-                        <p className="mb-2 text-lg"><strong>Price:</strong> {cake.price}</p>
-                        <p className="mb-2 bg-teal-300 rounded-md  italic text-gray-900 p-2">{cake.description}</p>
+                        <h1 className="type font-bold text-3xl">{cake.type}</h1>
+                        <p className="price mb-2 text-lg"><strong>Price:</strong> {cake.price}</p>
+                        <p className="description mb-2 bg-teal-300 rounded-md  italic text-gray-900 p-2">{cake.description}</p>
                         <div className="flex">
                             <div className="flex mr-4">
                                 <h1 className="mr-3 font-bold">Quantity</h1>
-                                <input type="number" defaultValue="1" className="text-black text-center mb-2 border border-1 rounded-md w-[50px] border-black" />
+                                <input type="number" name="quantity" defaultValue="1" className="quantity text-black text-center mb-2 border border-1 rounded-md w-[50px] border-black" />
                             </div>
                             <div className="flex">
                                 <h1 className="mr-3 font-bold">Weight <i>(in Kg)</i></h1>
-                                <input type="number" defaultValue="1" className="text-black text-center mb-2 border border-1 rounded-md w-[50px] border-black" />
+                                <input type="number" name="weight" defaultValue="1" className="weight text-black text-center mb-2 border border-1 rounded-md w-[50px] border-black" />
                             </div>
                         </div>
-                        <button className="bg-black text-white w-full text-center p-1 rounded-md font-bold" onClick={goToCakes}>Add To Cart</button>
+                        <button className="bg-black text-white w-full text-center p-1 rounded-md font-bold" type="submit">Add To Cart</button>
                         <NavLink className="text-center bg-red-500 text-white w-full p-1 font-bold rounded-md mt-2" to="/cakes">Cancel</NavLink>
                     </div>
                 </form>
