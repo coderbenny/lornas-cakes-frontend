@@ -22,12 +22,13 @@ function CakeDetail() {
         setShowDialog(true); // Show dialog when navigating
     }
 
-    function confirmNavigate() {
+    function continueShopping() {
         history.push('/cakes'); // Navigate to cakes page
     }
 
-    function cancelNavigate() {
-        setShowDialog(false); // Hide dialog
+    function goToCart() {
+        setShowDialog(false); // Hide the dialog box
+        history.push("/cart") // Navigate to Cart
     }
 
     return (
@@ -60,12 +61,12 @@ function CakeDetail() {
 
             {/* Modal for dialog box */}
             {showDialog && (
-                <div className="fixed inset-0 flex items-center mx-auto justify-center z-50">
+                <div className="fixed inset-0 flex items-center shadow-lg justify-center z-50">
                     <div className="bg-white p-4 rounded-md text-center">
-                        <p className="mb-4">Are you sure you want to add the cake to cart?</p>
+                        <p className="mb-4">You have succesfully added the cake to cart</p>
                         <div className="justify-center">
-                            <button onClick={confirmNavigate} className="bg-green-500 text-white p-2 rounded-md mr-2">Yes</button>
-                            <button onClick={cancelNavigate} className="bg-red-500 text-white p-2 rounded-md">No</button>
+                            <button onClick={continueShopping} className="bg-green-500 text-white p-2 rounded-md mr-2">Continue Shopping</button>
+                            <button onClick={goToCart} className="bg-red-500 text-white p-2 rounded-md">Go to Cart</button>
                         </div>
                     </div>
                 </div>

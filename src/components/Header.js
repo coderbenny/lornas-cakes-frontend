@@ -13,7 +13,7 @@ function Header() {
                 {/* <input type="text" placeholder="search cake flavors..." className=" bg-gray-200 text-black p-2 mr-2 rounded-md" /> */}
                 <img src="./till.jpg" alt="till" className="h-[50px]" />
                 <button class="shadow-lg border border-blue-100 ronded-md p-2 px-5 font-bold bg-orange-500 text-white hover:border-orange-500  mr-2">Sign Up</button>
-                <img src="/shopping-cart-free-15-svgrepo-com.svg" alt="shopping cart" className="h-10 w-10  mr-1 hover:shadow-lg" />
+                <NavLink to="/cart"><img src="/shopping-cart-free-15-svgrepo-com.svg" alt="shopping cart" className="h-10 w-10  mr-1 hover:shadow-lg" /></NavLink>
             </div>
         </div>
     )

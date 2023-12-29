@@ -1,12 +1,25 @@
 import React from "react";
-import { NavLink } from "react-router-dom"
+import { useState } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 
 function ReviewForm() {
+
+    const [showDialog, setShowDialog] = useState(false); // State to manage dialog visibility
+    const history = useHistory();
+
+    function confirmNavigate() {
+        history.push('/reviews'); // Navigate to cakes page
+    }
+
+    // function cancelNavigate() {
+    //     setShowDialog(false); // Hide dialog
+    // }
+
     return (
         <div className="flex flex-col items-center p-5 h-[700px] bg-orange-500">
             <h1 className="font-bold text-3xl text-white mb-4">Feedback</h1>
 
-            <form className="w-96 flex flex-col bg-white p-5 rounded-md shadow-lg ">
+            <form className="w-96 flex flex-col bg-white p-5 rounded-md shadow-lg">
                 <p className="mt-2 mb-4 text-black">Feel free to leave some feedback about our services and what you need to be improved on.</p>
 
                 <div className="flex flex-col w-full mb-4">
@@ -19,8 +32,20 @@ function ReviewForm() {
                     <textarea id="comment" placeholder="Type your comment here..." className="p-2 border-black border-2 rounded-md"></textarea>
                 </div>
 
-                <button type="submit" className="p-3 border-2 rounded-md bg-black shadow-sm text-orange-500 font-bold mb-3 border-black">Add Comment</button>
+                <button type="button" className="p-3 border-2 rounded-md bg-black shadow-sm text-orange-500 font-bold mb-3 border-black" onClick={() => setShowDialog(true)}>Add Comment</button>
                 <NavLink to="/reviews" className="text-center font-bold shadow-sm">Cancel</NavLink>
+
+                {showDialog && (
+                    <div className="fixed inset-0 flex items-center mx-auto justify-center z-50">
+                        <div className="bg-white p-4 rounded-md text-center">
+                            <p className="mb-4">Your Review has been Published!</p>
+                            <div className="justify-center">
+                                <button onClick={confirmNavigate} className="bg-green-500 text-white p-2 rounded-md mr-2">OK</button>
+                                {/* <button onClick={cancelNavigate} className="bg-red-500 text-white p-2 rounded-md">No</button> */}
+                            </div>
+                        </div>
+                    </div>
+                )}
             </form>
         </div>
     );
