@@ -12,6 +12,8 @@ import BakingClasses from './components/BakingClasses';
 import CakeDetail from './components/CakeDetail';
 import Cart from './components/Cart';
 import CartDetail from './components/CartDetail';
+import { CartProvider } from './components/CartContext';
+
 
 
 
@@ -19,40 +21,39 @@ function App() {
 
 
   return (
-    <Router>
-      <div className="App justify-start">
-        <Header />
-        <Switch>
-          <Route path="/cakes/:id">
-            <CakeDetail />
-          </Route>
-          <Route path="/cart/:id">
-            <CartDetail />
-          </Route>
-          <Route path="/cakes">
-            <Cakes />
-          </Route>
-          <Route path="/shoot">
-            <BirthdaySurprise />
-          </Route>
-          <Route path="/reviews">
-            <ReviewHome />
-          </Route>
-          <Route path="/classes">
-            <BakingClasses />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
-      </div>
-    </Router >
+    <CartProvider>
+      <Router>
+        <div className="App justify-start">
+          <Header />
+          <Switch>
+            <Route path="/cakes/:id">
+              <CakeDetail />
+            </Route>
+            <Route path="/cakes">
+              <Cakes />
+            </Route>
+            <Route path="/shoot">
+              <BirthdaySurprise />
+            </Route>
+            <Route path="/reviews">
+              <ReviewHome />
+            </Route>
+            <Route path="/classes">
+              <BakingClasses />
+            </Route>
+            <Route path="/cart">
+              <Cart />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+        </div>
+      </Router >
+    </CartProvider>
   );
 }
 

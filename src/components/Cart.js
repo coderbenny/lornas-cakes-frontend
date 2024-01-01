@@ -1,33 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
+import { CartContext } from "./CartContext";
 
 function Cart() {
 
     // State for the cart items
-    const [cart, setCart] = useState();
-
-    // UseEffect for fetching the cart items
-    useEffect(() => {
-        fetch('http://localhost:5000/cart')
-            .then(res => res.json())
-            .then((itemCart) => setCart(itemCart))
-    }, [])
-
-    // console.log(cart)
-
-
-    // Function for Deleting item from Cart
-    function handleDeleteItem(id) {
-        fetch(`https:localhost:5000/cart/${id}`, {
-            method: 'DELETE',
-        })
-            .then(res => res.json())
-            .then((data) => console.log(data))
-
-        const remItems = cart.filter((item) => item.id !== id);
-        setCart(remItems)
-        // console.log(id)
-    }
-
+    const { cart, setCart, deleteCartItem } = useContext(CartContext);
 
     return (
         <div className="bg-orange-500 h-[700px] flex-column items-center align-center p-5">
@@ -48,7 +25,7 @@ function Cart() {
                                 <p className=""><strong>Quantity: {item.quantity}</strong></p>
                             </div>
 
-                            <button onClick={() => handleDeleteItem(item.id)} className="font-bold bg-white text-black p-2 rounded-md ml-auto hover:shadow-lg-700" >
+                            <button onClick={() => deleteCartItem(item.id)} className="font-bold bg-white text-black p-2 rounded-md ml-auto hover:shadow-lg-700" >
                                 <img src="/delete-1487-svgrepo-com.svg" alt="delete" className="h-5 w-5" />
                             </button> {/* Added ml-auto */}
                         </div>

@@ -256,16 +256,6 @@
       "price": "$10.00",
       "amount": "1",
       "quantity": "2"
-    },
-    {
-      "id": 7,
-      "image_url": "/delicious-cake.jpg",
-      "image_alt": "cake",
-      "type": "Vanilla cake",
-      "price": "$10.00",
-      "description": "Zesty lemon delight: a citrus symphony atop a velvety cake. A slice of sunshine!",
-      "weight": "1",
-      "quantity": "1"
     }
   ]
 }
