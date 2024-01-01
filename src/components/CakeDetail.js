@@ -17,14 +17,34 @@ function CakeDetail({ addOrder }) {
     function handleBuy(e) {
         e.preventDefault();
 
-        const weight = e.target.querySelector('input[name=weight]').value;
-        const quantity = e.target.querySelector('.quantity').value;
-        const newCake = { ...cake, weight: weight, quantity: quantity };
-        addOrder(newCake)
-        setShowDialog(true); // Show dialog when navigating
+        const weightInput = e.target.querySelector('input[name=weight]');
+        const quantityInput = e.target.querySelector('.quantity');
 
-        // console.log(newCake)
+        if (!weightInput || !quantityInput) {
+            console.error('Required input fields not found');
+            return;
+        }
+
+        const weight = weightInput.value;
+        const quantity = quantityInput.value;
+
+        const newCake = { ...cake, weight: weight, quantity: quantity };
+
+        fetch('http://localhost:5000/cart', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newCake)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setShowDialog(true);
+            })
+            .catch(error => console.error('An Error Occurred!', error));
     }
+
 
     function continueShopping() {
         history.push('/cakes'); // Navigate to cakes page

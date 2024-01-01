@@ -11,26 +11,12 @@ import NotFound from './components/NotFound';
 import BakingClasses from './components/BakingClasses';
 import CakeDetail from './components/CakeDetail';
 import Cart from './components/Cart';
+import CartDetail from './components/CartDetail';
 
 
 
 function App() {
 
-  useState(() => (
-    fetch('https')
-  ), [])
-
-  const [cart, setCart] = useState([]);
-
-  // Delete Item from Cart
-  function removeFromCart(newData) {
-    setCart(newData)
-  }
-
-  // Adding item to Cart
-  function handleAddCake(newData) {
-    setCart(newData)
-  }
 
   return (
     <Router>
@@ -38,7 +24,10 @@ function App() {
         <Header />
         <Switch>
           <Route path="/cakes/:id">
-            <CakeDetail addOrder={handleAddCake} />
+            <CakeDetail />
+          </Route>
+          <Route path="/cart/:id">
+            <CartDetail />
           </Route>
           <Route path="/cakes">
             <Cakes />
@@ -53,7 +42,7 @@ function App() {
             <BakingClasses />
           </Route>
           <Route path="/cart">
-            <Cart shoppingCart={cart} deleteItem={removeFromCart} />
+            <Cart />
           </Route>
           <Route exact path="/">
             <Home />
@@ -63,7 +52,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-    </Router>
+    </Router >
   );
 }
 

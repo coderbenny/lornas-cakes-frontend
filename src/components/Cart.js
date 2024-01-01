@@ -1,23 +1,31 @@
 import React, { useState, useEffect } from "react";
 
-function Cart({ shoppingCart, deleteItem }) {
+function Cart() {
 
     // State for the cart items
     const [cart, setCart] = useState();
 
     // UseEffect for fetching the cart items
     useEffect(() => {
-        fetch(' http://localhost:5000/cart')
+        fetch('http://localhost:5000/cart')
             .then(res => res.json())
             .then((itemCart) => setCart(itemCart))
     }, [])
 
+    // console.log(cart)
 
-    console.log(cart)
 
+    // Function for Deleting item from Cart
     function handleDeleteItem(id) {
-        const filterData = shoppingCart.filter((item) => item.id !== id);
-        deleteItem(filterData);
+        fetch(`https:localhost:5000/cart/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then((data) => console.log(data))
+
+        const remItems = cart.filter((item) => item.id !== id);
+        setCart(remItems)
+        // console.log(id)
     }
 
 
