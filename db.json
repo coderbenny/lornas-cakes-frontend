@@ -251,11 +251,13 @@
   "cart": [
     {
       "id": 2,
-      "image": "/delicious-cake.jpg",
+      "image_url": "/delicious-cake.jpg",
+      "image_alt": "cake",
       "type": "Chocolate cake",
       "price": "$10.00",
-      "amount": "1",
-      "quantity": "2"
+      "description": "Silky cocoa dream: layers of deep chocolate richness with a melt-in-mouth allure.",
+      "weight": 1,
+      "quantity": 1
     }
   ]
 }

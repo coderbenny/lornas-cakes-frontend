@@ -7,7 +7,7 @@ function CartProvider({ children }) {
 
     const [cart, setCart] = useState([]);
 
-    // Async function for fetching data
+    // Async function for fetching Cart data
     const fetchCartData = async () => {
         try {
             const response = await fetch('http://localhost:5000/cart');
@@ -43,12 +43,32 @@ function CartProvider({ children }) {
             })
     }
 
+    // FUnction for adding item to cart
+    function addCartItem(newCake) {
+        fetch('http://localhost:5000/cart', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "Application/json",
+            },
+            body: JSON.stringify(newCake)
+        })
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network connection is not okay', Error);
+                }
+                return res.json();
+            })
+            .then(data => {
+                console.log(data)
+            })
+    }
+
 
     useEffect(() => {
         fetchCartData();
     }, [])
 
-    const value = { cart, setCart, deleteCartItem };
+    const value = { cart, setCart, deleteCartItem, addCartItem };
 
     return (
         <CartContext.Provider value={value}>

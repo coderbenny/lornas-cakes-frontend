@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 import data from "../data/data";
+import { CartContext } from "./CartContext";
 
 function CakeDetail({ addOrder }) {
     const [showDialog, setShowDialog] = useState(false); // State to manage dialog visibility
     const history = useHistory();
     const { id } = useParams();
     const cake = data.cakeType.find((cake) => cake.id === parseInt(id));
+
+    const { addCartItem } = useContext(CartContext);
 
     if (!cake) {
         return <div>Cake Not Found</div>;
@@ -28,21 +31,9 @@ function CakeDetail({ addOrder }) {
         const weight = weightInput.value;
         const quantity = quantityInput.value;
 
-        const newCake = { ...cake, weight: weight, quantity: quantity };
-
-        fetch('http://localhost:5000/cart', {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newCake)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setShowDialog(true);
-            })
-            .catch(error => console.error('An Error Occurred!', error));
+        const newCake = { ...cake, weight: parseFloat(weight), quantity: parseInt(quantity, 10) };
+        addCartItem(newCake)
+        setShowDialog(true);
     }
 
 
