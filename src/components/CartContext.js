@@ -60,6 +60,7 @@ function CartProvider({ children }) {
             })
             .then(data => {
                 console.log(data)
+                setCart([...cart, data]);
             })
     }
 

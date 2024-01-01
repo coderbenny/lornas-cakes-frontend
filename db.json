@@ -257,6 +257,16 @@
       "price": "$10.00",
       "description": "Silky cocoa dream: layers of deep chocolate richness with a melt-in-mouth allure.",
       "weight": 1,
+      "quantity": 3
+    },
+    {
+      "id": 3,
+      "image_url": "/delicious-cake.jpg",
+      "image_alt": "cake",
+      "type": "Black forest cake",
+      "price": "$10.00",
+      "description": "Dark cherry allure: luscious layers of chocolate and fruit, a woodland delight.",
+      "weight": 3,
       "quantity": 1
     }
   ]
