@@ -43,7 +43,7 @@ function CartProvider({ children }) {
             })
     }
 
-    // FUnction for adding item to cart
+    // Function for adding item to cart
     function addCartItem(newCake) {
         fetch('http://localhost:5000/cart', {
             method: 'POST',
@@ -56,13 +56,34 @@ function CartProvider({ children }) {
                 if (!res.ok) {
                     throw new Error('Network connection is not okay', Error);
                 }
-                return res.json();
+                return res.json(); // This will throw an error if the response is not valid JSON
             })
             .then(data => {
-                console.log(data)
+                console.log(data);
+                // const containsObj = cart.includes(data);
+
+                // if (containsObj) {
+                //     // Update the quantity and weight of the existing cake
+                //     const updatedCart = cart.map(item => {
+                //         if (item.type === data.type) {
+                //             return {
+                //                 ...item,
+                //                 quantity: item.quantity + data.quantity,
+                //                 weight: item.weight + data.weight
+                //             };
+                //         }
+                //         return item;
+                //     });
+                //     setCart(updatedCart);
+                // } else {
                 setCart([...cart, data]);
+                // }
             })
+            .catch(error => {
+                console.error('Error adding cake to cart:', error);
+            });
     }
+
 
 
     useEffect(() => {
