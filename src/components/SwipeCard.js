@@ -14,13 +14,13 @@ function SwipeCard({ slides }) {
   const swiper = new Swiper('.swiper', {
 
     // Autoplay delay in seconds
-    autoplay: {
-      delay: 5000,
-    },
+    // autoplay: {
+    //   delay: 5000,
+    // },
 
 
     // Optional parameters
-    direction: 'vertical',
+    direction: 'horizontal',
     loop: true,
 
     // If we need pagination
@@ -64,7 +64,7 @@ function SwipeCard({ slides }) {
         {/* ... Render slides dynamically if needed */}
       </div>
       {/* If we need pagination */}
-      {/* <div className="swiper-pagination"></div> */}
+      <div className="swiper-pagination"></div>
 
       {/* If we need navigation buttons */}
       <div className="swiper-button-prev"></div>

@@ -47,7 +47,7 @@ function Cart() {
             <div className="flex-column w-[700px] items-center justify-between border-4 rounded-md border-white mx-auto bg-black p-1">
                 <div className="flex-column text-center p-2">
                     <h1 className="font-bold text-red-400 text-2xl">TOTAL</h1>
-                    <p className="font-bold text-white text-3xl">{cart.length === 0 ? '' : total}</p>
+                    <p className="font-bold text-white text-3xl">{cart.length === 0 ? '' : `$${total}`}</p>
                 </div>
                 <button className="text-black bg-white w-full p-2 px-5 font-bold">Pay</button>
             </div>
